@@ -1,6 +1,7 @@
 {
   "name": "13-12-2021",
   "version": "0.1.0",
+  "homepage": "http://rebecca-xm.github.io/react-social-app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
