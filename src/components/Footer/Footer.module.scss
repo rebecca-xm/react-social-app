@@ -1,5 +1,7 @@
+@import './../../libs/variable.scss'; // '.' cartella attuale - '..' indietro di una posizione
+
 .footer {
-    padding: 20px 30px 50px;
+    padding: 20px $sidePadding 50px;
 
     hr {
         border: 0;

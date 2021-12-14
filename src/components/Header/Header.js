@@ -1,3 +1,5 @@
+import styles from "./Header.module.scss";
+
 const Header = (props) => {
 
     //! SINTASSI PRECEDENTE ALL'AGGIUNTA DELLE PROPS:
@@ -8,13 +10,15 @@ const Header = (props) => {
     // ];
 
     //? Cosa succede se non passo dei valori alle props? Per evitare errori e di rompere il codice:
-    const name = props.name || 'App'; //* se le props sono undefined indico di andare a prendere il valore da App
-    const links = props.links || 'App'; //* in tal modo ci saranno sempre dei valori predefiniti già settati
+    const name = props.name || 'App';                               
+    const links = props.links || [{ link: "/", label: "Link" }];    
+    //* se le props sono undefined indico di andare a prendere il valore da App
+    //* in tal modo ci saranno sempre dei valori predefiniti già settati
 
     //! SINTASSI PRECEDENTE ALLA RIMOZIONE DELLE PROPS DAL JSX => {props.name} e {props.links.map}
 
     return (
-        <header>
+        <header className={styles.header}>
             <h1>{name}</h1>
             <nav>
                 <ul>
