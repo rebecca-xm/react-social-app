@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
 
 function App() {
   const name = 'Feisbrut';
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
       <Header name={name} links={nav}/>
+      <Home />
       <Footer />
     </div>
   );
