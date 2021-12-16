@@ -5,11 +5,13 @@ const MessagePreview = (props) => {
         text: 'lorem ipsum', date: new Date(), sender: 'user',
     };
 
+    const createDate = (date) => new Date(date);
+
     return (
         <div className={styles.message}>
             <h5>{data.sender}</h5>
             <p>
-                <small>{data.date.toLocaleDateString()} - {data.date.toLocaleTimeString()}</small>
+                <small>{createDate(data.date).toLocaleDateString()} - {createDate(data.date).toLocaleTimeString()}</small>
             </p>
             <p>{data.text}</p>
         </div>

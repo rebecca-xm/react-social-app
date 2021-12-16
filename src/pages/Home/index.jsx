@@ -1,33 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FriendPreview from '../../components/FriendPreview';
 import { MessagePreview } from '../../components/MessagePreview';
 import styles from './Home.module.scss';
 import { Post } from '../../components/Post';
+import { http } from '../../libs/http';
 
-const friends = [
-    {name: 'Will', photo: 'https://64.media.tumblr.com/2c00245b0025578d80cca4bd7248dd24/tumblr_o06kb8txMY1sjjlobo6_250.png'},
-    {name: 'Alana', photo: 'https://64.media.tumblr.com/e8575b0d02e1f070e59e3662c34966ad/a85562aa88fa06dd-62/s400x600/e699838a2f2f4d21f49389d4704d6f560223e3ba.png'},
-    {name: 'Margot', photo: 'https://64.media.tumblr.com/df27221d2745aa6ce1b996e400205be1/tumblr_p1b7capCQ31vd63fwo1_540.jpg'},
-];
+const friends = [];
 
-const messages = [
-    {text: 'lorem ipsum', date: new Date(), sender: 'Pippo'},
-    {text: 'lorem ipsum', date: new Date(), sender: 'Pluto'},
-    {text: 'lorem ipsum', date: new Date(), sender: 'Topolino'},
-    {text: 'lorem ipsum', date: new Date(), sender: 'Minnie'},
-    {text: 'lorem ipsum', date: new Date(), sender: 'Paperino'},
-];
+const messages = [];
 
-const posts = [
-    {author: 'user', text: 'Oggi ho accarezzato un bel cagnolone', date: new Date()},
-    {author: 'user', text: 'Sto imparando React', date: new Date(), photo: ''},
-];
+const posts = [];
 
 const Home = () => {
     const [friendsPreview, setFriendsPreview] = useState(friends);           // informazione che sarà monitorata dal componente React
     // equivale a => const friendsPreview = [];
-    const [allPosts, setAllPosts] = useState(posts); 
-    const [messagesPreview, setMessagesPreview] = useState(messages); 
+    const [allPosts, setAllPosts] = useState(posts);
+    const [messagesPreview, setMessagesPreview] = useState(messages);
+
+    //! fetch('https://edgemony-backend.herokuapp.com/friends?_limit=4')
+    //! .then(response => response.json())
+    //! .then(data => setFriendsPreview(data));         
+    //! ^ sposto la funzione in useEffect() perché m'interessa che il codice venga eseguito solo in uno specifico momento
+
+    //* SINTASSI PRE CREAZIONE HTTP.JS
+    // useEffect(() => {
+    //     fetch('https://edgemony-backend.herokuapp.com/friends?_limit=4')
+    //         .then(response => response.json())
+    //         .then(data => setFriendsPreview(data));
+
+    //         fetch('https://edgemony-backend.herokuapp.com/posts')
+    //         .then(response => response.json())
+    //         .then(data => setAllPosts(data));
+
+    //         fetch('https://edgemony-backend.herokuapp.com/messages?_limit=4')
+    //         .then(response => response.json())
+    //         .then(data => setMessagesPreview(data));
+    // }, []);
+
+    //* SINTASSI POST CREAZIONE HTTP.JS
+    useEffect(() => {
+        http('/friends?_limit=4').then(data => setFriendsPreview(data));
+        http('/posts').then(data => setAllPosts(data));
+        http('/messages?_limit=4').then(data => setMessagesPreview(data));
+    }, []);
 
     return (
         <section className={styles.home}>
@@ -54,3 +69,8 @@ export default Home;
 //* PROPS E STATI
 // Le props dicono "questi sono dati che vengono dall'esterno del componente"
 // Lo stato fa il contrario, indica che i dati sono interni al componente e per questo se li manipola lui
+
+//* LINTER - WARNINGS 15/12
+// gli strumenti di linting sono strumenti di controllo stilistico
+// quindi non di qualcosa che non funziona ma di qualcosa che andrebbe fatto meglio
+// nel caso del problema riscontrato il 15/12 si trattava per esempio delle variabili non assegnate
