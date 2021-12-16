@@ -9,8 +9,6 @@ const Post = (props) => {
         photo: 'https://images.unsplash.com/photo-1511149672083-577ee63de3dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
     };
 
-    const createDate = (date) => new Date(date);
-
     return (
         <article className={styles.post}>
             <h3>{data.author}</h3>
