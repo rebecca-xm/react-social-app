@@ -1,0 +1,13 @@
+//! .then(data => setFriendsPreview(data));         
+
+//! .then(response => response.json())
+
+//! RICORDA: UN COMPONENTE JSX DEVE RITORNARE SEMPRE UN SOLO ELEMENTO PARENTE
+
+//! SINTASSI PRECEDENTE ALL'AGGIUNTA DELLE PROPS:
+
+//! SINTASSI PRECEDENTE ALLA RIMOZIONE DELLE PROPS DAL JSX => {props.name} e {props.links.map}
+
+//! ^ sposto la funzione in useEffect() perché m'interessa che il codice venga eseguito solo in uno specifico momento
+
+//! fetch('https://edgemony-backend.herokuapp.com/friends?_limit=4')

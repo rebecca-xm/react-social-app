@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-social-app/static/css/main.2d2593f3.chunk.css",
-    "main.js": "/react-social-app/static/js/main.7269c02c.chunk.js",
-    "main.js.map": "/react-social-app/static/js/main.7269c02c.chunk.js.map",
+    "main.js": "/react-social-app/static/js/main.790f4484.chunk.js",
+    "main.js.map": "/react-social-app/static/js/main.790f4484.chunk.js.map",
     "runtime-main.js": "/react-social-app/static/js/runtime-main.353ac437.js",
     "runtime-main.js.map": "/react-social-app/static/js/runtime-main.353ac437.js.map",
     "static/js/2.c515df85.chunk.js": "/react-social-app/static/js/2.c515df85.chunk.js",
@@ -12,12 +12,12 @@
     "index.html": "/react-social-app/index.html",
     "static/css/main.2d2593f3.chunk.css.map": "/react-social-app/static/css/main.2d2593f3.chunk.css.map",
     "static/js/2.c515df85.chunk.js.LICENSE.txt": "/react-social-app/static/js/2.c515df85.chunk.js.LICENSE.txt",
-    "static/js/main.7269c02c.chunk.js.LICENSE.txt": "/react-social-app/static/js/main.7269c02c.chunk.js.LICENSE.txt"
+    "static/js/main.790f4484.chunk.js.LICENSE.txt": "/react-social-app/static/js/main.790f4484.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.353ac437.js",
     "static/js/2.c515df85.chunk.js",
     "static/css/main.2d2593f3.chunk.css",
-    "static/js/main.7269c02c.chunk.js"
+    "static/js/main.790f4484.chunk.js"
   ]
 }
