@@ -1,4 +1,5 @@
 import styles from './Post.module.scss';
+import { DateInfo } from "./../Date/Date.jsx";
 
 const Post = (props) => {
     const data = props.data || {
@@ -14,7 +15,7 @@ const Post = (props) => {
         <article className={styles.post}>
             <h3>{data.author}</h3>
             <p>
-                <small>{createDate(data.date).toLocaleDateString()} - {createDate(data.date).toLocaleTimeString()}</small>
+                <small><DateInfo relative={data.date}/></small>
             </p>
             <p>{data.text}</p>
 

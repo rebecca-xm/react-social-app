@@ -1,4 +1,5 @@
 import styles from "./MessagePreview.module.scss";
+import { DateInfo } from "./../Date/Date.jsx";
 
 const MessagePreview = (props) => {
     const data = props.data || {
@@ -11,7 +12,7 @@ const MessagePreview = (props) => {
         <div className={styles.message}>
             <h5>{data.sender}</h5>
             <p>
-                <small>{createDate(data.date).toLocaleDateString()} - {createDate(data.date).toLocaleTimeString()}</small>
+                <small><DateInfo relative={data.date} /></small>
             </p>
             <p>{data.text}</p>
         </div>
