@@ -1,3 +1,4 @@
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import styles from "./Header.module.scss";
 
 const Header = (props) => {
@@ -15,6 +16,13 @@ const Header = (props) => {
     //* se le props sono undefined indico di andare a prendere il valore da App
     //* in tal modo ci saranno sempre dei valori predefiniti già settati
 
+    const CheckActive = (link) => {
+        const resolved = useResolvedPath(link);
+        const match = useMatch({path: resolved.pathname, end: true});
+
+        return match ? styles.active : "";
+    };
+
     //! SINTASSI PRECEDENTE ALLA RIMOZIONE DELLE PROPS DAL JSX => {props.name} e {props.links.map}
 
     return (
@@ -24,7 +32,7 @@ const Header = (props) => {
                 <ul>
                     {links.map((item, index) => (
                     <li key={index}>                            
-                        <a href={item.link}>{item.label}</a>
+                        <Link className={CheckActive(item.link)} to={item.link}>{item.label}</Link>
                     </li>
                     ))}
                     {/* N.B. la chiave (KEY) permette di distinguere il singolo elemento nell'iterazione 
