@@ -16,7 +16,7 @@ import Home from "./pages/Home";
 const INIT_STATE = {
   name: 'Feisbrut',
   nav: [
-    { link: '/home', label: 'Home' },
+    { link: '/', label: 'Home' },
     { link: '/new-post', label: 'Create new post' },
     { link: '/friends', label: 'Friends' },
     { link: '/messages', label: 'Messages' }
@@ -43,7 +43,7 @@ function App() {
   return (
     <div>
       <Header name={state.name} links={state.nav} />
-      {/* <button onClick={() => dispatch({ type: "change-name" })}>Cambia nome</button> */}
+      <button onClick={() => dispatch({ type: "change-name" })}>Cambia nome</button>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new-post" element={<CreatePost />} />
