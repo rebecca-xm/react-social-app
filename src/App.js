@@ -3,6 +3,7 @@ import { useReducer } from "react";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import CreatePost from "./components/CreatePost";
 import Home from "./pages/Home";
 
 // const CheckActive = (link) => {
@@ -16,6 +17,7 @@ const INIT_STATE = {
   name: 'Feisbrut',
   nav: [
     { link: '/home', label: 'Home' },
+    { link: '/new-post', label: 'Create new post' },
     { link: '/friends', label: 'Friends' },
     { link: '/messages', label: 'Messages' }
   ],
@@ -41,9 +43,10 @@ function App() {
   return (
     <div>
       <Header name={state.name} links={state.nav} />
-      <button onClick={() => dispatch({ type: "change-name" })}>Cambia nome</button>
+      {/* <button onClick={() => dispatch({ type: "change-name" })}>Cambia nome</button> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/new-post" element={<CreatePost />} />
         <Route path="/messages" element={<h3>Messages</h3>} />
         <Route path="/friends" element={<h3>Friends</h3>} />
       </Routes>

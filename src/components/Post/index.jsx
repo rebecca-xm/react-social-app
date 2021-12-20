@@ -13,7 +13,7 @@ const Post = (props) => {
         <article className={styles.post}>
             <h3>{data.author}</h3>
             <p>
-                <small><DateInfo relative={data.date}/></small>
+                <small>{data.date ? <DateInfo relative={data.date}/> : <></>}</small>
             </p>
             <p>{data.text}</p>
 
