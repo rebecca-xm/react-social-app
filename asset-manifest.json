@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-social-app/static/css/main.9a5ebc74.chunk.css",
-    "main.js": "/react-social-app/static/js/main.44b4a5cc.chunk.js",
-    "main.js.map": "/react-social-app/static/js/main.44b4a5cc.chunk.js.map",
+    "main.css": "/react-social-app/static/css/main.ba4b64b6.chunk.css",
+    "main.js": "/react-social-app/static/js/main.b2866026.chunk.js",
+    "main.js.map": "/react-social-app/static/js/main.b2866026.chunk.js.map",
     "runtime-main.js": "/react-social-app/static/js/runtime-main.55441bc0.js",
     "runtime-main.js.map": "/react-social-app/static/js/runtime-main.55441bc0.js.map",
     "static/js/2.84733f6c.chunk.js": "/react-social-app/static/js/2.84733f6c.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.3ad06336.chunk.js": "/react-social-app/static/js/3.3ad06336.chunk.js",
     "static/js/3.3ad06336.chunk.js.map": "/react-social-app/static/js/3.3ad06336.chunk.js.map",
     "index.html": "/react-social-app/index.html",
-    "static/css/main.9a5ebc74.chunk.css.map": "/react-social-app/static/css/main.9a5ebc74.chunk.css.map",
+    "static/css/main.ba4b64b6.chunk.css.map": "/react-social-app/static/css/main.ba4b64b6.chunk.css.map",
     "static/js/2.84733f6c.chunk.js.LICENSE.txt": "/react-social-app/static/js/2.84733f6c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.55441bc0.js",
     "static/js/2.84733f6c.chunk.js",
-    "static/css/main.9a5ebc74.chunk.css",
-    "static/js/main.44b4a5cc.chunk.js"
+    "static/css/main.ba4b64b6.chunk.css",
+    "static/js/main.b2866026.chunk.js"
   ]
 }
