@@ -19,7 +19,7 @@ const Home = () => {
 
     useEffect(() => {
         http('/friends?_limit=4').then(data => setFriendsPreview(data));
-        http('/posts').then(data => setAllPosts(data));
+        http('/posts').then(data => setAllPosts(data.reverse()));
         http('/messages?_limit=4').then(data => setMessagesPreview(data));
     }, []);
 
