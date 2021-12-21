@@ -31,8 +31,9 @@ const Home = () => {
                     {friendsPreview.map((friend, index) => <FriendPreview key={index} data={friend} />)}
                 </aside>
                 <main>
-                    <Link to='/new-post' />
-                    <button className={styles.createPostBtn}>+ Create a new post!</button>
+                    <Link to='/new-post'>
+                        <button className={styles.createPostBtn}>+ Create a new post!</button>
+                    </Link>
                     {allPosts.map((post, index) => <Post key={index} data={post} />)}
                 </main>
                 <aside>
