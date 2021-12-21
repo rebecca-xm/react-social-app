@@ -10,7 +10,4 @@ const Footer = () => {
     );
 };
 
-//* il module.scss fa in modo che non ci siano mai due moduli con la stessa classe e lo stesso hash
-// quindi si va a ridurre il rischio ed eventuali pericoli derivanti da conflitti nel css
-
 export default Footer;

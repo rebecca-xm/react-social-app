@@ -7,6 +7,25 @@
         display: grid;
         grid-template-columns: 200px auto 200px;
         column-gap: 20px;
+
+        .createPostBtn {
+            background-color: $main;
+            border-radius: 10px;
+            border: 0;
+            color: $white;
+            font-size: 1.1rem;
+            font-weight: bold;
+
+            width: 100%;
+            padding: 30px;
+            margin-bottom: 20px;
+
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 4px 2px rgb(223, 240, 243);
+            }
+        }
     }
 
     .friend {

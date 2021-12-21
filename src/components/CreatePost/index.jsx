@@ -15,18 +15,11 @@ const CreatePost = () => {
         event.preventDefault();
         httpPost('/posts', formPostObj);
         alert('Your post has been created');
-
-        //      setFormPostObj({
-        //          authot: authorInput,
-        //          text: messageInput,
-        //          date: new Date().toISOString(),
-        //          photo: imgInput
-        //      });
     };
 
     useEffect(() => {
         setFormPostObj({
-            authot: authorInput,
+            author: authorInput,
             text: messageInput,
             date: new Date().toISOString(),
             photo: imgInput
