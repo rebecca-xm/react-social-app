@@ -7,14 +7,16 @@ import CreatePost from "./components/CreatePost";
 import Home from "./pages/Home";
 import Messages from "./pages/Messages";
 import Friends from "./pages/Friends";
+import Login from "./components/Login";
 
 const INIT_STATE = {
   name: 'Feisbrut',
   nav: [
     { link: '/', label: 'Home' },
-    { link: '/new-post', label: 'Create new post' },
+    // { link: '/new-post', label: 'Create new post' },
     { link: '/friends', label: 'Friends' },
-    { link: '/messages', label: 'Messages' }
+    { link: '/messages', label: 'Messages' },
+    { link: '/login', label: 'Login' }    
   ],
   friendsPreview: [],
 };
@@ -40,6 +42,7 @@ function App() {
         <Route path="/new-post" element={<CreatePost />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/friends" element={<Friends />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
