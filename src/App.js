@@ -7,7 +7,7 @@ import CreatePost from "./components/CreatePost";
 import Home from "./pages/Home";
 import Messages from "./pages/Messages";
 import Friends from "./pages/Friends";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 
 const INIT_STATE = {
   name: 'Feisbrut',
