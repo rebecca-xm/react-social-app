@@ -1,16 +1,23 @@
 import { useState, useEffect } from "react";
 import { httpPost } from "../../libs/http";
 import styles from "./CreateFriend.module.scss";
+import Modal from "../Modal";
 
 const CreateFriend = () => {
   const [friendName, setFriendName] = useState("");
   const [friendPhoto, setFriendPhoto] = useState("");
   const [formPostObj, setFormPostObj] = useState({});
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const handleSendBtn = (event) => {
     event.preventDefault();
     httpPost("/friends", formPostObj);
-    alert("L'amico è stato aggiunto");
+    // alert("L'amico è stato aggiunto");
+    setModalVisible(true);
+
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -22,6 +29,7 @@ const CreateFriend = () => {
 
   return (
     <div className={styles.createFriend}>
+      {isModalVisible && <Modal bgColor={'lightgreen'} text={'This contact has been added'} />}
       <form>
         <div className={styles.__friend}>
           <input

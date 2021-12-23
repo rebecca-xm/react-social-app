@@ -25,7 +25,7 @@ const Home = () => {
 
     return (
         <section className={styles.home}>
-            <h3>Benvenuto utente!</h3>
+            <h3>Welcome user!</h3>
             <div className={styles.grid}>
                 <aside>
                     {friendsPreview.map((friend, index) => <FriendPreview key={index} data={friend} />)}

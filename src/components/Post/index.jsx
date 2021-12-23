@@ -1,6 +1,8 @@
 import styles from './Post.module.scss';
+import { useState } from 'react';
 import { DateInfo } from "./../Date/Date.jsx";
 import { httpDELETE } from '../../libs/http';
+import Modal from '../Modal';
 
 const Post = (props) => {
     const data = props.data || {
@@ -11,13 +13,21 @@ const Post = (props) => {
     };
 
     const handleDeletePost = () => {
-        httpDELETE(`/posts/${props.data.id}`).then(() => {});
-        alert(`Post by ${props.author} was deleted`);
-        window.location.href = '/';
+        httpDELETE(`/posts/${props.data.id}`).then(() => { });
+        // alert(`Post by ${props.author} was deleted`);
+        setModalVisible(true);
+
+        setTimeout(() => {
+            setModalVisible(false);
+            window.location.href = '/';
+        }, 2000);
     };
+
+    const [isModalVisible, setModalVisible] = useState(false);
 
     return (
         <article className={styles.post}>
+            {isModalVisible && <Modal bgColor={'red'} text={'This post has been deleted'} />}
             <button onClick={handleDeletePost}>X</button>
             <h3>{data.author}</h3>
             <p>
