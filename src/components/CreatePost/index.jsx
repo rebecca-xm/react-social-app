@@ -33,7 +33,10 @@ const CreatePost = () => {
     const handleSendBtn = (e) => {
         e.preventDefault();
         httpPost("/posts", state.formPostObj);
-        dispatch({ type: "modal", payload: !state.isModalVisible });
+        dispatch({ type: "modal", payload: !state.isModalVisible })
+        setTimeout(() => {
+            dispatch({ type: 'modal' })
+          }, 2000);
 
         // setTimeout(() => {
         //     isModalVisible(false);
