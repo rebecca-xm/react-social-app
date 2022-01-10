@@ -9,8 +9,8 @@ const initialState = {
     formPostObj:
     {
         author: '',
-        message: '',
-        img: '',
+        text:'',
+        photo: '',
         date: new Date().toISOString(),
     },
     isModalVisible: false
@@ -61,12 +61,12 @@ const CreatePost = () => {
                         required />
 
                     <input
-                        value={state.formPostObj.img}
-                        onChange={(e) => dispatch({ type: "form", value: "img", payload: e.target.value })}
-                        name='img'
-                        id='img'
-                        type='img'
-                        placeholder='Img URL' />
+                        value={state.formPostObj.photo}
+                        onChange={(e) => dispatch({ type: "form", value: "photo", payload: e.target.value })}
+                        name='photo'
+                        id='photo'
+                        type='photo'
+                        placeholder='photo URL' />
 
                     <button
                         type="submit"
@@ -82,14 +82,14 @@ const CreatePost = () => {
                 </div>
 
                 <textarea
-                    value={state.formPostObj.message}
-                    onChange={(e) => dispatch({ type: "form", value: "message", payload: e.target.value })}
-                    name='message'
-                    id='message'
+                    value={state.formPostObj.text}
+                    onChange={(e) => dispatch({ type: "form", value: "text", payload: e.target.value })}
+                    name='text'
+                    id='text'
                     type='text'
                     cols='30'
                     rows='10'
-                    placeholder='message'
+                    placeholder='text'
                     required>
                 </textarea>
             </form>
@@ -102,14 +102,14 @@ export default CreatePost;
 //* SINTASSI CON USESTATE
 // const CreatePost = () => {
 //     const [authorInput, setAuthorInput] = useState('');
-//     const [imgInput, setImgInput] = useState('');
-//     const [messageInput, setMessageInput] = useState('');
+//     const [photoInput, setphotoInput] = useState('');
+//     const [textInput, settextInput] = useState('');
 //     const [formPostObj, setFormPostObj] = useState({});
 //     const [isModalVisible, setModalVisible] = useState(false);
 
 //     // const handleAuthorInput = (event) => setAuthorInput(event.target.value); <= PREV.VALUE 
-//     // const handleImgInput = (event) => setImgInput(event.target.value);
-//     // const handleMessageInput = (event) => setMessageInput(event.target.value);
+//     // const handlephotoInput = (event) => setphotoInput(event.target.value);
+//     // const handletextInput = (event) => settextInput(event.target.value);
 //     const handleSendBtn = (event) => {
 //         event.preventDefault();
 //         httpPost('/posts', formPostObj);
@@ -124,11 +124,11 @@ export default CreatePost;
 //     useEffect(() => {
 //         setFormPostObj({
 //             author: authorInput,
-//             text: messageInput,
+//             text: textInput,
 //             date: new Date().toISOString(),
-//             photo: imgInput
+//             photo: photoInput
 //         });
-//     }, [authorInput, imgInput, messageInput])
+//     }, [authorInput, photoInput, textInput])
 
 //     return (
 //         <div className={styles.createPost}>
@@ -145,12 +145,12 @@ export default CreatePost;
 //                         required />
 
 //                     <input
-//                         value={imgInput}
-//                         onChange={(e) => setImgInput(e.target.value)}
-//                         name='img'
-//                         id='img'
-//                         type='img'
-//                         placeholder='Img URL' />
+//                         value={photoInput}
+//                         onChange={(e) => setphotoInput(e.target.value)}
+//                         name='photo'
+//                         id='photo'
+//                         type='photo'
+//                         placeholder='photo URL' />
 
 //                     <button onClick={handleSendBtn} type='submit'>
 //                         SEND
@@ -158,14 +158,14 @@ export default CreatePost;
 //                 </div>
 
 //                 <textarea
-//                     value={messageInput}
-//                     onChange={(e) => setMessageInput(e.target.value)}
-//                     name='message'
-//                     id='message'
+//                     value={textInput}
+//                     onChange={(e) => settextInput(e.target.value)}
+//                     name='text'
+//                     id='text'
 //                     type='text'
 //                     cols='30'
 //                     rows='10'
-//                     placeholder='message'
+//                     placeholder='text'
 //                     required>
 //                 </textarea>
 //             </form>
