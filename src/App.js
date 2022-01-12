@@ -53,19 +53,23 @@ function App() {
         <Route path="/" element={
           <Suspense fallback={<Loading />}>
             <Home />
-          </Suspense>} />
+          </Suspense>
+        } />
         <Route path="/new-post" element={
           <Suspense fallback={<Loading />}>
             <CreatePost />
-          </Suspense>} />
+          </Suspense>
+        } />
         <Route path="/messages" element={
           <Suspense fallback={<Loading />}>
             <Messages />
-          </Suspense>} />
+          </Suspense>
+        } />
         <Route path="/friends" element={
           <Suspense fallback={<Loading />}>
             <Friends />
-          </Suspense>} />
+          </Suspense>
+        } />
         <Route path="/login" element={
           <Suspense fallback={<Loading />}>
             <Login />
