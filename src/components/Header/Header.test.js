@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { createMemoryHistory } from 'history'
-import { Router } from 'react-router-dom'
+import { createMemoryHistory } from 'history';
+import { Router } from 'react-router-dom';
 import Header from './Header';
 
 test('render and check the <Header /> component', () => {
@@ -20,7 +20,6 @@ test('render and check the <Header /> component', () => {
     const msg = screen.getByText('App');
     expect(msg).toBeInTheDocument();
 });
-
 
 test('render and check the <Header /> component with custom name', () => {
     const history = createMemoryHistory();
@@ -44,13 +43,16 @@ test('render and check the <Header/> component with custom with custom links', (
         { link: '/login', label: 'Login' },
     ];
 
+    // ^ creo l'array di oggetti che poi passo al componente
+    // che viene renderizzato nel test
+
     const { container } = render(
         <Router location={history.location} navigator={history}>
             <Header links={links} />
         </Router>);
 
     const lis = container.querySelectorAll('nav li');
-    expect(lis.length).toBe(lis.length);
+    expect(lis.length).toBe(links.length);
 });
 
 // normalmente, l'oggetto history esiste già nel browser.
